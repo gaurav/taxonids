@@ -1,0 +1,12 @@
+TaxonIds
+Copyright (C) Gaurav Vaidya, 2011.
+
+This website provides a lookup service for Wikipedia editors who
+want to quickly add a `Template:TaxonIds`[1] template to a taxonomic
+article on Wikipedia. Given a species number, it will look up several
+species databases and look up the taxon ids on them. Finally, it
+will format these as a valid `Template:TaxonIds` string and provide
+it to the user for direct insertion into the Wikipedia article.
+
+References:
+ [1] http://en.wikipedia.org/wiki/Template:TaxonIds
