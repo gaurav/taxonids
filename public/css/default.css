@@ -1,0 +1,16 @@
+/*
+ * A default CSS file.
+ *
+ * Copyright (c) Gaurav Vaidya, 2011.
+ */
+
+body {
+    background: #A9E2F3
+}
+
+.form {
+    margin-left:    2em;
+    padding:        1em;
+    background:     rgb(240, 240, 0);
+    border-left:    5px solid red;
+}

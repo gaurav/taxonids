@@ -1,5 +1,6 @@
 require 'sinatra'
+require './templates'
 
 get '/' do
-    "Hello, world!"
+    template :index, "Welcome!"
 end

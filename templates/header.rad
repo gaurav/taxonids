@@ -1,0 +1,9 @@
+<html>
+    <head>
+        <title>Template:TaxonIds lookup: <r:pagetitle /></title>
+        <link rel="stylesheet" href="css/default.css" />
+    </head>
+    <body>
+
+<h1>Template:TaxonIds lookup: <r:pagetitle /></h1>
+
