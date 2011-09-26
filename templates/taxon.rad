@@ -1,1 +1,34 @@
 <p>Now examining taxon <r:print name='nomen' />.</p>
+
+<table border="1">
+    <thead>
+        <th>Database</th>
+        <th>Mapping</th>
+        <th>Status</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Wikispecies</td>
+            <td>N/A</td>
+            <td>Not currently queried.</td>
+        </tr>
+        <tr>
+            <td>NCBI</td>
+            <td>N/A</td>
+            <td>Not currently queried.</td>
+        </tr>
+        <tr>
+            <td>uBio NameBank</td>
+            <td><r:print_if name='namebank_id'      default='N/A' /></td>
+            <td><r:print_if name='namebank_status'  default='Lookup failed: internal error in this program' /></td>
+        </tr>
+        <tr>
+            <td>Encyclopedia of Life (EOL)</td>
+            <td><r:if_def name='eol_url'><a href="<r:print name='eol_url' />"></r:if_def>
+                <r:print_if name='eol_id' default='N/A' />
+                <r:if_def name="eol_url"></a></r:if_def>
+            </td>
+            <td><r:print_if name='eol_status'  default='Lookup failed: internal error in this program' /></td>
+        </tr>
+    </tbody>
+</table>

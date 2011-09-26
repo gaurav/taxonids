@@ -12,7 +12,7 @@ def template(filename, pagetitle, vars = {})
         end
 
         c.define_tag 'print' do |tag|
-            if vars.key?(tag.attr['name']) then
+            if vars.key?(tag.attr['name']) and vars[tag.attr['name']] != nil then
                 vars[tag.attr['name']]
             else
                 '???'
@@ -20,7 +20,7 @@ def template(filename, pagetitle, vars = {})
         end
 
         c.define_tag 'if_def' do |tag|
-            if vars.key?(tag.attr['name']) then
+            if vars.key?(tag.attr['name']) and vars[tag.attr['name']] != nil then
                 tag.expand()
             else
                 ''
@@ -28,8 +28,10 @@ def template(filename, pagetitle, vars = {})
         end
 
         c.define_tag 'print_if' do |tag|
-            if vars.key?(tag.attr['name']) then
+            if vars.key?(tag.attr['name']) and vars[tag.attr['name']] != nil then
                 vars[tag.attr['name']]
+            elsif tag.attr.key?('default') then
+                tag.attr['default']
             else
                 ''
             end
