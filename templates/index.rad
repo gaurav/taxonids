@@ -1,12 +1,4 @@
 
-<p>To generate the <tt><a href="http://en.wikipedia.org/wiki/Template:TaxonIds">Template:TaxonIds</a></tt> template for a taxon, 
-please enter the taxon name or species binomial here:</p>
-
-<!-- TODO: enter some examples here -->
-
-<form action="submit" method="GET">
-    <div class="form">    
-        <input name="nomen" type="text" size="30">
-        <button type="submit">Go!</button>
-    </div>
-</form>
+<p>Welcome to the TaxonIds Lookup engine! Please enter a taxon or 
+species name into the box above and hit 'Go'!
+</p>

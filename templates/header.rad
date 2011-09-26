@@ -1,9 +1,20 @@
 <html>
     <head>
-        <title>TaxonIds lookup: <r:pagetitle /></title>
-        <link rel="stylesheet" href="css/default.css" />
+        <title>TaxonIds Lookup: <r:pagetitle /></title>
+        <link rel="stylesheet" href="/css/default.css" />
     </head>
     <body>
 
-<h1>TaxonIds lookup: <r:pagetitle /></h1>
+<h1>TaxonIds Lookup: <r:pagetitle /></h1>
 
+<p>To generate the <tt><a href="http://en.wikipedia.org/wiki/Template:TaxonIds">Template:TaxonIds</a></tt> template for a taxon, 
+please enter the taxon name or species binomial here:</p>
+
+<!-- TODO: enter some examples here -->
+
+<form action="/submit" method="GET">
+    <div class="form">    
+        <input name="nomen" type="text" value="<r:print_if name='nomen' />" size="30">
+        <button type="submit">Go!</button>
+    </div>
+</form>
