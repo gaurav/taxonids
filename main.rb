@@ -50,6 +50,7 @@ get '/taxon/*' do |taxon|
         taxon.capitalize!
     end
 
+    (wikispecies_title, wikispecies_status) = get_wikispecies_info(taxon)
     (namebank_id, namebank_status) = get_ubio_namebank_info(taxon)
     (eol_id, eol_status) = get_eol_info(taxon)
 
@@ -59,6 +60,9 @@ get '/taxon/*' do |taxon|
         'type' =>    'taxon',
         'nomen' =>   taxon,
 
+        'wikispecies_title' =>  wikispecies_title,
+        'wikispecies_status' => wikispecies_status,
+
         'namebank_id' =>        namebank_id,
         'namebank_status' =>    namebank_status,
 
@@ -66,6 +70,12 @@ get '/taxon/*' do |taxon|
         'eol_url' =>            eol_url(eol_id),
         'eol_status' =>         eol_status
     }
+end
+
+def get_wikispecies_info(taxon)
+    url = 'http://species.wikimedia.org/wiki/%s' % taxon
+
+    return [nil, "Could not check for Wikispecies page at #{url}"]
 end
 
 def get_ubio_namebank_info(taxon)
@@ -89,8 +99,8 @@ def get_eol_info(taxon)
 
     results = JSON.parse(res.body)
     if results.key?('results') and results['totalResults'] > 0 then
-        return [results['results'][0]['id'], "Result retrieved successfully."]
+        return [results['results'][0]['id'], "#{results['totalResults']} results found, using the first one."]
     else
-        return ["N/A", "Taxon '" + escape(taxon) + "' could not be found in EOL"]
+        return [nil, "Taxon '" + escape(taxon) + "' could not be found in EOL"]
     end
 end

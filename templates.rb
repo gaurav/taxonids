@@ -1,5 +1,8 @@
+require 'rubygems'
 require 'radius'
 require 'pp'
+
+require 'uri'
 
 def template(filename, pagetitle, vars = {})
     context = Radius::Context.new { |c|
@@ -9,6 +12,15 @@ def template(filename, pagetitle, vars = {})
 
         c.define_tag 'pagetitle' do
             pagetitle
+        end
+
+        c.define_tag 'print_urlencode' do |tag|
+             if vars.key?(tag.attr['name']) and vars[tag.attr['name']] != nil then
+                URI.escape(vars[tag.attr['name']])
+            else
+                '???'
+            end
+           
         end
 
         c.define_tag 'print' do |tag|
