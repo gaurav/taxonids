@@ -5,7 +5,6 @@ require 'net/http'
 require 'uri'
 require 'json'
 require 'xmlsimple'
-require 'string19'
 
 require './templates'
 
@@ -106,7 +105,11 @@ end
 def get_existing_ids(taxon)
     url = "http://en.wikipedia.org/w/api.php?action=query&titles=" + URI.escape(taxon) + "&prop=extlinks&format=xml&ellimit=250"
     res = http_get(url)
-    data = XmlSimple.xml_in(res.body)
+    if RUBY_VERSION[0..2] == "1.8" then
+        data = XmlSimple.xml_in(res.body)
+    else
+        data = XmlSimple.xml_in(res.body.force_encoding('utf-8'))
+    end
 
     existing_ids = {}
     existing_ids['unknown'] = ""
