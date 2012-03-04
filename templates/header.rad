@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>TaxonIds Lookup: <r:pagetitle /> (v0.1)</title>
+        <title>TaxonIds Lookup: <r:pagetitle /> (v0.1.1)</title>
         <link rel="stylesheet" href="/css/default.css" />
     </head>
     <body>
