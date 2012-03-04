@@ -1,4 +1,4 @@
-<p>Now examining taxon <r:print name='nomen' />.</p>
+<p>Now examining taxon <a href="<r:print name='wikipedia_url' />"><r:print name='nomen' /></a>.</p>
 
 <!--
 <pre><r:print name='message' /></pre>

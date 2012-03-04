@@ -70,6 +70,8 @@ get '/taxon/*' do |taxon|
     template :taxon, "taxon " + taxon, {
         'type' =>    'taxon',
         'nomen' =>   taxon,
+
+        'wikipedia_url' => "http://en.wikipedia.org/wiki/" + URI.escape(taxon),
         
         'message' => existing_ids['unknown'],
 
