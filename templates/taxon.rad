@@ -1,15 +1,19 @@
 <p>Now examining taxon <r:print name='nomen' />.</p>
 
+<pre><r:print name='message' /></pre>
+
 <table border="1">
     <thead>
         <th>Database</th>
         <th>Mapping</th>
+        <th>Existing Id</th>
         <th>Status</th>
     </thead>
     <tbody>
         <tr>
             <td>Wikispecies</td>
-            <td>&nbsp;<r:if_def name='wikispecies_title'><a href="http://species.wikimedia.org/wiki/<r:print_urlencode name='wikispecies_title' />"><r:print_if name='wikispecies_title' /></r:if_def></td>
+            <td><r:if_def name='wikispecies_title'><a href="http://species.wikimedia.org/wiki/<r:print_urlencode name='wikispecies_title' />"><r:print_if name='wikispecies_title' /></r:if_def>&nbsp;</td>
+            <td><r:if_def name='wikispecies_title_existing'><a href="http://species.wikimedia.org/wiki/<r:print_urlencode name='wikispecies_title_existing' />"><r:print_if name='wikispecies_title_existing' /></r:if_def>&nbsp;</td>
             <td><r:print_if name='wikispecies_status' /></td>
         </tr>
         <tr>
@@ -40,6 +44,7 @@
 <p style="padding-left: 5em; white-space:pre; background:black; color: white; font-family: monospace;">
 {{taxonids
   |name={{subst:FULLPAGENAME}}
+  <r:if_def name='wikispecies_title_final'>|wikispecies=<r:print_if name='wikispecies_title_final' /></r:if_def>
   <r:if_def name='eol_id'>|eol=<r:print_if name='eol_id' /></r:if_def>
 }}
 
