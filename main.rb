@@ -103,7 +103,7 @@ get '/taxon/*' do |taxon|
 end
 
 def get_existing_ids(taxon)
-    url = "http://en.wikipedia.org/w/api.php?action=query&titles=" + URI.escape(taxon) + "&prop=extlinks&format=xml&ellimit=500"
+    url = "http://en.wikipedia.org/w/api.php?action=query&titles=" + URI.escape(taxon) + "&prop=extlinks&format=xml&ellimit=250"
     res = http_get(url)
     data = XmlSimple.xml_in(res.body)
 
