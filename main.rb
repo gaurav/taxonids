@@ -5,6 +5,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 require 'xmlsimple'
+require 'string19'
 
 require './templates'
 
