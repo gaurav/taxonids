@@ -1,5 +1,9 @@
-0.1     Initial release (2012-03-04)
+0.1.2   Bugfix (2012-03-30)
+    Added Google Analytics code to track users.
+
 0.1.1   Bugfix (2012-03-04)
     Fixed a UTF-8 encoding bug which only affected
     Ruby 1.9 (i.e. on Heroku) and was not visible 
     on my local machine. 
+
+0.1     Initial release (2012-03-04)
