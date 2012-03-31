@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>TaxonIds Lookup: <r:pagetitle /> (v0.1.1)</title>
+        <title>TaxonIds Lookup: <r:pagetitle /> (v0.1.2)</title>
         <link rel="stylesheet" href="/css/default.css" />
         <script type="text/javascript">
             var _gaq = _gaq || [];
