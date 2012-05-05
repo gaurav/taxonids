@@ -1,1 +1,41 @@
-Some thoughts.
+What are we tracking?
+
+ A Species: (Name --> Types @ Publication)
+
+ - Process:
+  1. Specimens collected, vouchered.
+  2. Publication defining types, name. (name created)
+  3. Publication identifying museum specimens/observations.
+
+ - Names
+  - Linking to names ("superseded by", "belongs to").
+  - Linking to specimens ("holotype", "lectotype", "identified as")
+  - Linking to publications ("defined in", "sensu", "information about", "used by")
+
+ - Publications
+  - Including page information/link to scan/taxon definition.
+
+ - Specimens
+  - In museums or as GBIF observations.
+
+Simplest total linkup we can do right now: GBIF obs <-> BHL pub <-> ITIS name.
+
+What's the selling point? 
+Why would anybody want data to be linked up in this way? 
+ - So that all information about "Panthera tigris" can be collected together in some way.
+
+Why is the original publication important/interesting to non-taxonomists at all?
+ - Without a "sensu" or a definition, a name is potentially meaningless: "Panthera tigris" could mean different things to everybody who uses that term, whereas "Panthera tigris L." is relatively unambiguous, at least in terms of definition. However:
+    (1) not everybody is that fussy about names, especially in ecology -- a tiger is a tiger, because it's unlikely to be mistaken for a near-conspecific.
+    (2) even where errors are likely (insects, for e.g.), ... 
+    (3) the only reason this is an issue at all is (a) inadvertent errors inside large groups, which are unlikely, and (b) cross-code or cross-group synonymies, in which case the full name might be used to 
+
+What is important:
+ - name (binomial, monomial)
+ - authority
+  - or is it?
+ - a standard representation (i.e. iPlant TNRS)
+  - but if the taxonomic community can guarantee perfectly disambiguated binomials and monomials, we don't need anything apart from the Linnaean name.
+   - but we will still need "old" (non-disambiguated) Linnaean names so that pre-disambiguated b/mials make sense.
+ - status (in use? deprecated in favour of ...?)
+ - again, if the tax. comm. can g. p. d. b/mials, we're good to go.
