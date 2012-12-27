@@ -192,8 +192,7 @@ def eol_url(id)
 end
 
 def get_eol_info(taxon)
-    url = 'http://eol.org/api/search/1.0/%s.json?exact=1'
-    url = sprintf(url, URI.escape(taxon))
+    url = 'http://eol.org/api/search/1.0/?q=%s&exact=1' % URI.escape(taxon)
 
     res = http_get(url)
     results = JSON.parse(res.body)
